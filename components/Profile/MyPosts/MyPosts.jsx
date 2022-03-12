@@ -5,15 +5,26 @@ import Message from "../../Dialogs/Message/Message";
 
 const MyPosts = (props) => {
 
-    let postsElements = props.state.posts.map(post => < Post message={post.message} likesCount={post.likesCount}/>);
+    let postsElements = props.posts.map(post => < Post message={post.message} likesCount={post.likesCount}/>);
+
+    let newPostElement = React.createRef();
+    let addPost = () => {
+        debugger;
+        props.addPost();
+    }
+let onPostChange = () =>{
+    let text = newPostElement.current.value;
+  props.updateNewPostText(text);
+}
     return (
 
         <div className={s.postsBlock}>
             <h3>My posts </h3>
             <div>
-                <div><textarea></textarea></div>
+                <div><textarea onChange={onPostChange} ref={newPostElement}
+                               value={props.newPostText} /></div>
                 <div>
-                    <button >add post</button>
+                    <button onClick={addPost} >add post</button>
                 </div>
                 <div>
                     <button>remove</button>
