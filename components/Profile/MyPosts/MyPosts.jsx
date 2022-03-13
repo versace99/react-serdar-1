@@ -22,6 +22,7 @@ let onPostChange = () =>{
     return (
 
         <div className={s.postsBlock}>
+
             <h3>My posts </h3>
             <div>
                 <div><textarea onChange={onPostChange} ref={newPostElement}
