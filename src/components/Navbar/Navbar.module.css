@@ -4,9 +4,9 @@
     padding:20px;
   }
   .item  {
-    color:white;
+    color:olivedrab;
       text-decoration: none;
 }
 .item .active{
-  color:gold;
+  color:black;
 }
